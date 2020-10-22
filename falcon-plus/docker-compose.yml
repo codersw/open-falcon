@@ -1,0 +1,16 @@
+version: '3'
+services:
+  falcon-plus:
+    restart: always
+    image: openfalcon/falcon-plus:v0.3
+    container_name: falcon-plus
+    ports:
+      - 8433:8433
+      - 8080:8080
+      - 6030:6030
+    volumes:
+      - /home/work/open-falcon/data:/open-falcon/data
+      - /home/work/open-falcon/logs:/open-falcon/logs
+    environment:
+      - MYSQL_PORT=root:ZNZLkj2020@tcp\(192.168.0.95:3306\)
+      - REDIS_PORT=192.168.0.95:6379

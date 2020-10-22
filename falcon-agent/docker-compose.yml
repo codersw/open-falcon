@@ -1,0 +1,11 @@
+version: '3'
+services:
+  falcon-agent:
+    restart: always
+    image: openfalcon/falcon-plus:v0.3
+    container_name: falcon-agent
+    hostname: 192.168.0.95
+    ports:
+      - 1988:1988
+    volumes:
+      - ./cfg.json:/open-falcon/agent/config/cfg.json
